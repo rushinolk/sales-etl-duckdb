@@ -300,7 +300,7 @@ services:
       _AIRFLOW_WWW_USER_CREATE: 'true'
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-      _PIP_ADDITIONAL_REQUIREMENTS: 'pandas sqlalchemy  apache-airflow logging requests'
+      _PIP_ADDITIONAL_REQUIREMENTS: 'pandas gdown  apache-airflow logging requests'
     user: "0:0"
 
   airflow-cli:
