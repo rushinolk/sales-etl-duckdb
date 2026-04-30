@@ -39,7 +39,7 @@ def validate_and_clean_data(file_path: str, output_path: str) -> str:
         # Salva o arquivo limpo para o DuckDB consumir
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         # Sugiro salvar como CSV limpo ou Parquet intermediário
-        df.to_parquet(output_path, index=False) 
+        df.to_csv(output_path, index=False) 
         
         logger.info(f"Dados validados: {df.shape[0]} linhas. Salvo em: {output_path}")
         return output_path

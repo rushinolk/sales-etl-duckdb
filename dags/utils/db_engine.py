@@ -33,8 +33,8 @@ def execute_and_export_star_schema(
         con.execute(script_sql)
         
         for table in tables_to_export:
-            output_path = os.path.join(output_folder, f"{table}.parquet").replace('\\', '/')
-            export_query = f"COPY {table} TO '{output_path}' (FORMAT PARQUET);"
+            output_path = os.path.join(output_folder, f"{table}.csv").replace('\\', '/')
+            export_query = f"COPY {table} TO '{output_path}' (HEADER, DELIMITER ',');"
             con.execute(export_query)
             
             arquivos_exportados.append(output_path)
