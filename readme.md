@@ -122,7 +122,3 @@ Todo o fluxo de dados foi modelado seguindo as melhores práticas de Engenharia 
    Os arquivos finais em formato CSV/Parquet estarão disponíveis na pasta `data/gold`, prontos para serem carregados no Power BI ou qualquer ferramenta analítica.
 
 ---
-### 👨‍💻 Autor
-**Arthur Machado Gomes**
-* [LinkedIn](https://www.linkedin.com/in/arthur-gomes1/)
-* [GitHub](https://github.com/rushinolk)
