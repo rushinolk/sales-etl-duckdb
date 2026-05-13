@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS dim_customer (
     region              VARCHAR(50),
     first_purchase_date DATE,
     last_purchase_date  DATE,
-    churn_flag          VARCHAR(10) -- Mantendo VARCHAR para 'Yes'/'No' ou '1'/'0'
+    churn_flag          VARCHAR(10) 
 );
 
 INSERT INTO dim_customer (
@@ -39,7 +39,7 @@ SELECT DISTINCT
     customer_segment, 
     customer_type, 
     region,
-    TRY_CAST(first_purchase_date AS DATE), -- Garantindo que venha como data
+    TRY_CAST(first_purchase_date AS DATE),
     TRY_CAST(last_purchase_date AS DATE),
     churn_flag
 FROM base_limpa
@@ -133,7 +133,8 @@ CREATE TABLE IF NOT EXISTS fact_order (
     net_revenue        DECIMAL(12,2),
     cost_of_goods_sold DECIMAL(12,2),
     gross_profit       DECIMAL(12,2),
-    net_income         DECIMAL(12,2) -- Adicionada a métrica de Lucro Líquido
+    net_income         DECIMAL(12,2) 
+    
 );
 
 INSERT INTO fact_order (
