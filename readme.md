@@ -93,7 +93,7 @@ Todo o fluxo de dados foi modelado seguindo as melhores práticas de Engenharia 
 ---
 
 ## 💡 Soluções de Engenharia (Destaques)
-
+* **Ingestão Autônoma:** Diferente de processos que dependem de arquivos previamente baixados, este pipeline inicia com o download automático dos dados brutos através de um script especializado, garantindo que o fluxo seja end-to-end desde o primeiro segundo.
 * **Checkpoints Físicos e Controle de Memória:** Para evitar a quebra do pipeline por estouro de memória no XCom do Airflow, implementei uma lógica de checkpoints físicos. O Airflow orquestra as tarefas passando apenas os *caminhos dos arquivos* processados, enquanto os dados reais são persistidos em disco a cada etapa, garantindo resiliência e estabilidade.
 * **Construção de DW via Código com DuckDB:** Aproveitei a experiência anterior com o DuckDB para construir um Data Warehouse in-process hiper-otimizado. A modelagem Star Schema foi implementada 100% via SQL, garantindo a idempotência através de lógicas de tratamento de conflitos e materialização de views analíticas prontas para o consumo.
 * **Single Source of Truth (SSOT):** Toda a inteligência de negócio foi centralizada no backend. Cálculos como Lucro Bruto e margens por categoria foram resolvidos na camada SQL, transformando o dashboard em uma camada de leitura leve e desacoplada, o que facilita a portabilidade para outras ferramentas de visualização sem perda de lógica.
